@@ -1,0 +1,222 @@
+/* --- MainPageHero: FULL WIDTH --- */
+.main-page-hero {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 0;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.12));
+  color: white;
+  
+}
+
+/* --- GRID: 4 columns, 3 rows, equal spacing --- */
+.hero-modules-grid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+
+  position: relative;
+  z-index: 5;
+}
+
+/* --- Cards: equal size --- */
+.hero-module-card {
+  background: var(--ifm-card-background-color);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow);
+  padding: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+  min-height: 220px;
+}
+
+.hero-module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+}
+
+/* Card Content */
+.card-icon {
+  font-size: 2.8rem;
+  margin-bottom: .6rem;
+  color: var(--ifm-color-primary);
+}
+
+.card-title {
+  margin: .3rem 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.card-description {
+  text-align: center;
+  opacity: .8;
+  font-size: .95rem;
+  margin-bottom: .8rem;
+}
+
+/* Centered Hero Text */
+.hero-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  max-width: 800px;
+  width: 90%;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem; /* spacing between the two buttons */
+  margin-top: 1.5rem; /* space above buttons */
+}
+
+/* Optional: improve spacing on smaller screens */
+@media (max-width: 600px) {
+  .hero-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+/* --- FULL-WIDTH SECTION --- */
+.features-section {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* Break out of Docusaurus container */
+  margin-right: calc(50% - 50vw);
+  padding: 4rem 2rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.06));
+}
+
+/* --- INNER CONTAINER WITH NICE LEFT/RIGHT PADDING --- */
+.features-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-align: center;
+}
+
+.features-heading {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+}
+
+/* --- 3 × 3 GRID (FULL WIDTH, RESPONSIVE) --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+/* --- CARD STYLE --- */
+.feature-card {
+  background: var(--ifm-card-background-color);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.3s ease;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- CARD HOVER ANIMATION --- */
+.feature-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  background-color: rgba(255,255,255,0.08);
+}
+
+/* --- ICON --- */
+.feature-icon {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: rotate(6deg) scale(1.15);
+}
+
+/* --- TEXT --- */
+.feature-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.feature-desc {
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+/* --- CTA BUTTONS --- */
+.features-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.features-cta .button {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .features-cta {
+    flex-direction: column;
+  }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .hero-modules-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-modules-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-modules-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
