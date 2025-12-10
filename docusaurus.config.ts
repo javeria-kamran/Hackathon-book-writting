@@ -18,8 +18,8 @@ const config: Config = {
   baseUrl: '/',
 
   // GitHub pages deployment config.
-  organizationName: 'abdul-rehan7', // Updated GitHub org/user name.
-  projectName: 'Hackathon-I-Physical-AI-Humanoid-Robotics', // Updated GitHub repo name.
+  organizationName: 'javeria-kamran', // Updated GitHub org/user name.
+  projectName: 'hackathon-book-writting', // Updated GitHub repo name.
 
   onBrokenLinks: 'throw',
 
@@ -40,7 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/abdul-rehan7/Hackathon-I-Physical-AI-Humanoid-Robotics/tree/main/', // Updated editUrl
+            'https://github.com/javeria-kamran/Hackathon-book-writting', // Updated editUrl
         },
         blog: {
           showReadingTime: true,
@@ -51,7 +51,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/abdul-rehan7/Hackathon-I-Physical-AI-Humanoid-Robotics/tree/main/', // Updated editUrl
+            'https://github.com/javeria-kamran/Hackathon-book-writting', // Updated editUrl
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -71,18 +71,18 @@ const config: Config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'The Guide to Modern Agentic Development',
-        logo: {
-          alt: 'Physical AI & Humanoid Robotics Logo',
-          src: 'img/logo.svg',
-        },
+        title: '--> Guide to Modern Agentic Development',
+        // logo: {
+        //   alt: 'Physical AI & Humanoid Robotics Logo',
+        //   src: 'img/bookie.jfif',
+        // },
         items: [
           { to: '/docs/intro', label: 'Home', position: 'left' },
           { to: '/docs/course-modules', label: 'Start Learning', position: 'left' },
           { to: '/docs/why-physical-ai-matters', label: 'Why Physical AI', position: 'left' },
           { to: '/docs/learning-outcomes', label: 'Learning Outcomes', position: 'left' },
           { to: '/docs/hardware-requirements', label: 'Hardware Requirements', position: 'left' },
-          { href: 'https://github.com/abdul-rehan7/Hackathon-I-Physical-AI-Humanoid-Robotics', label: 'GitHub', position: 'right' },
+          { href: 'https://github.com/javeria-kamran/Hackathon-book-writting', label: 'GitHub', position: 'right' },
         ],
       },
       footer: {
@@ -114,7 +114,7 @@ const config: Config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/abdul-rehan7/Hackathon-I-Physical-AI-Humanoid-Robotics', // Updated GitHub link
+                href: 'https://github.com/javeria-kamran/Hackathon-book-writting',
               },
             ],
           },

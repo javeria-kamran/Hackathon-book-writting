@@ -123,27 +123,25 @@ export default function MainPageHero() {
       </div>
 
       {/* ----- Content Cards Section (Full-Width) ----- */}
-      <section className="content-section">
-        <h2 className="content-heading">What You Will Learn</h2>
+   <section className="content-section">
+  <h2 className="content-heading">Why Choose This Program</h2>
 
-        <div className="content-grid">
-          {contentCardsData.map((card, index) => (
-            <div key={index} className="content-item">
-              <div className="content-icon">
-                <NoSsr><IconLoader iconName={card.icon} /></NoSsr>
-              </div>
-
-              <div className="content-text">
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
-              </div>
-
-              {/* neon divider */}
-              <div className="content-divider"></div>
-            </div>
-          ))}
+  <div className="content-grid">
+    {contentCardsData.map((card, index) => (
+      <div key={index} className="content-item">
+        <div className="content-icon">
+          <NoSsr><IconLoader iconName={card.icon} /></NoSsr>
         </div>
-      </section>
+
+        <div className="content-text">
+          <h3>{card.title}</h3>
+          <p>{card.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
     </>
   );

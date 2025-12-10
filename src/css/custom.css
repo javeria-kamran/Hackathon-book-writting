@@ -29,7 +29,7 @@
 .hero-module-card {
   background: var(--ifm-card-background-color);
   border-radius: var(--ifm-global-radius);
-  box-shadow: var(--ifm-global-shadow);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* lighter shadow */
   padding: 1.5rem;
   cursor: pointer;
   text-decoration: none;
@@ -37,13 +37,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform .25s ease, box-shadow .25s ease;
+  position: relative; /* for overlay */
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   min-height: 220px;
 }
-
+.hero-module-card::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* full coverage */
+  background: rgba(0, 0, 0, 0.25); /* dim by default */
+  border-radius: var(--ifm-global-radius);
+  transition: background 0.3s ease;
+  z-index: 1;
+}
 .hero-module-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(0,0,0,0.22);
+}
+
+.hero-module-card:hover::after {
+  background: rgba(0, 0, 0, 0); /* remove dim on hover */
 }
 
 /* Card Content */
@@ -201,72 +214,86 @@
   }
 }
 
-/* Section Wrapper */
+/* Section wrapper — now truly FULL WIDTH */
 .content-section {
-  width: 100%;
-  padding: 40px 0;
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+
+  padding: 40px 24px;
+  background: var(--ifm-background-color);
 }
 
-/* Section Heading */
+/* Section heading */
 .content-heading {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.2rem;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-/* 2 Column Layout */
+/* GRID — 2 items per row on large screens */
 .content-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 4rem;
   width: 100%;
 }
 
-/* Each Row Item */
+/* One content item */
 .content-item {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  padding-bottom: 25px;
+  gap: 1.6rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(0, 255, 200, 0.35);
   position: relative;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.content-item:hover {
+  transform: translateY(-3px);
+}
+
+.content-item:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, cyan, #00ffea, cyan);
+  box-shadow: 0 0 6px #00ffe0;
 }
 
 /* Icon */
 .content-icon {
-  font-size: 40px;
-  min-width: 40px;
+  font-size: 2.8rem;
+  color: #00e6ff;
+  min-width: 3rem;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
 }
 
 /* Text */
 .content-text h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
 .content-text p {
-  margin: 0;
-  font-size: 0.98rem;
-  line-height: 1.6;
-  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.55;
+  opacity: 0.85;
 }
 
-/* Neon Divider */
-.content-divider {
-  height: 2px;
-  width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 255, 255, 0.7),
-    rgba(0, 120, 255, 0.7)
-  );
-  position: absolute;
-  bottom: 0;
-  left: 0;
+/* Mobile 1-per-row */
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* RESPONSIVE */
@@ -287,3 +314,89 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+/* ============================================================
+   GLOBAL COLOR OVERRIDE → ORANGE THEME
+   ============================================================ */
+
+/* Icon colors (all icons) */
+.card-icon,
+.feature-icon,
+.content-icon {
+  color: #ff7a1a !important; /* strong warm orange */
+}
+
+/* Learn more button outline color */
+.hero-module-card .button--outline {
+  border-color: #ff7a1a !important;
+  color: #ff7a1a !important;
+}
+
+.hero-module-card .button--outline:hover {
+  background: #ff7a1a !important;
+  color: white !important;
+}
+
+/* Neon line → warm orange glow */
+.content-item {
+  border-bottom: 1px solid rgba(255, 140, 60, 0.45) !important;
+}
+
+.content-item:hover::after {
+  background: linear-gradient(90deg, #ff7a1a, #ffb374, #ff7a1a) !important;
+  box-shadow: 0 0 8px rgba(255, 120, 20, 0.9) !important;
+}
+
+/* Features card hover background with orange tint */
+.feature-card:hover {
+  background-color: rgba(255, 160, 80, 0.09) !important;
+}
+
+/* Change primary brand-like accents */
+:root {
+  --ifm-color-primary: #ff7a1a;
+  --ifm-color-primary-dark: #e96d16;
+  --ifm-color-primary-light: #ff954c;
+}
+
+/* ============================================================
+   HERO GRID — CENTER EVERYTHING INSIDE EACH CARD
+   ============================================================ */
+
+.hero-module-card {
+  text-align: center !important;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* ensures icon, title, text, button align center */
+  height: 100%;
+}
+
+.card-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+/* Remove any default left text alignment from title/description */
+.card-title,
+.card-description {
+  text-align: center !important;
+}
+
+/* Center the Learn More button wrapper */
+.card-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+/* Optional: soft orange shadow on hover */
+.hero-module-card:hover {
+  box-shadow: 0 14px 34px rgba(255, 122, 20, 0.151) !important;
+}
+

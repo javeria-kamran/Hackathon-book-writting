@@ -1,0 +1,64 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
+
+/* Custom styles for the features section */
+.featuresSection {
+  background-color: var(--ifm-color-darkest-gray-bg);
+  padding: 5rem 0; /* Adjusted padding */
+}
+
+.featureItem {
+  background-color: var(--ifm-color-dark-gray-bg);
+  border: 1px solid var(--ifm-color-gray);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    border-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute content */
+  height: 100%; /* Make cards same height */
+}
+
+.featureItem:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 8px var(--ifm-color-primary); /* Cinematic shadow */
+  border-color: var(--ifm-color-primary); /* Indigo highlight on hover */
+}
+
+.featureIcon {
+  font-size: 3rem; /* Emoji size */
+  margin-bottom: 1rem;
+}
+
+.featureTitle {
+  color: var(--ifm-color-white);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.featureDescription {
+  color: var(--ifm-color-light-gray);
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .featureItem {
+    padding: 1.5rem;
+  }
+  .featureTitle {
+    font-size: 1.5rem;
+  }
+}
