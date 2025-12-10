@@ -22,13 +22,44 @@ const moduleData = [
 
 // ---------------- Content Cards ----------------
 const contentCardsData = [
-  { icon: "FaLightbulb", title: "Innovative Curriculum", description: "Cutting-edge topics, project-based learning, and hands-on experience." },
-  { icon: "FaRocket", title: "Career Advancement", description: "Gain skills highly sought after in the rapidly growing field of robotics and AI." },
-  { icon: "FaHandsHelping", title: "Community Support", description: "Join a vibrant community of learners and experts, fostering collaboration and growth." },
-  { icon: "FaShieldAlt", title: "Expert Instructors", description: "Learn from industry leaders and academic experts with deep knowledge in Physical AI." },
-  { icon: "FaChalkboardTeacher", title: "Flexible Learning", description: "Self-paced modules and comprehensive resources to fit your schedule." },
-  { icon: "FaGraduationCap", title: "Certification", description: "Earn a certificate of completion to validate your expertise in Physical AI." },
+  {
+    icon: "FaLightbulb",
+    title: "Innovative Curriculum",
+    description:
+      "Our curriculum is designed around the latest advancements in robotics and Physical AI. Each module introduces concepts through practical, real-world applications. You will work on hands-on projects that strengthen your understanding and technical abilities. The content is continuously updated to match current industry standards. By the end, you will have a strong foundation built through experience, not theory alone."
+  },
+  {
+    icon: "FaRocket",
+    title: "Career Advancement",
+    description:
+      "This program equips you with skills that are highly valued across technology-driven industries. You will gain practical experience that makes you competitive in emerging job markets. The curriculum focuses on both technical depth and problem-solving capabilities. Employers actively seek professionals who can innovate using robotics and AI. Completing this course positions you strongly for growth opportunities in your career."
+  },
+  {
+    icon: "FaHandsHelping",
+    title: "Community Support",
+    description:
+      "You will become part of a thriving community of learners and professionals. The platform encourages peer-to-peer collaboration and shared problem solving. Instructors and mentors are accessible to guide you throughout your journey. Regular discussions and group activities help reinforce concepts and expand your network. This supportive environment ensures you are never learning alone."
+  },
+  {
+    icon: "FaShieldAlt",
+    title: "Expert Instructors",
+    description:
+      "Our instructors are industry veterans and academic leaders with deep expertise in Physical AI. They teach using real-world case studies and practical examples. Their guidance helps bridge the gap between theory and application. You will receive insights that come directly from years of professional experience. This level of mentorship ensures your learning is both accurate and industry-aligned."
+  },
+  {
+    icon: "FaChalkboardTeacher",
+    title: "Flexible Learning",
+    description:
+      "The program is designed to fit seamlessly into your schedule. You can learn at your own pace without compromising depth or quality. Each module includes structured lessons that are easy to follow. Additional resources are provided to support different learning styles. This flexibility ensures consistent progress whether you study daily or on weekends."
+  },
+  {
+    icon: "FaGraduationCap",
+    title: "Certification",
+    description:
+      "Upon completion, you will earn a recognized certificate validating your skills in Physical AI. This certification demonstrates your commitment to professional growth. It serves as a strong addition to your résumé or portfolio. Employers appreciate credentials backed by practical learning and real projects. Your certification reflects not just completion, but genuine expertise."
+  }
 ];
+
 
 // ---------------- Dynamic Icon Loader ----------------
 function IconLoader({ iconName, ...props }) {
@@ -85,7 +116,7 @@ export default function MainPageHero() {
           </p>
           <div className="hero-buttons">
             <Link className="button button--primary button--lg" to="/docs/intro">Get Started</Link>
-            <Link className="button button--secondary button--lg" to="/docs/course-modules/index">View Modules</Link>
+            <Link className="button button--secondary button--lg" to="/docs/course-modules/">View Modules</Link>
           </div>
         </div>
 
