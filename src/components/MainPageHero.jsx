@@ -4,20 +4,21 @@ import NoSsr from './NoSsr';
 
 // ---------------- Module Card Data ----------------
 const moduleData = [
-  { week: 1, title: "Introduction to ROS 2", description: "Fundamentals of ROS 2, nodes, topics, and services.", icon: "FaRobot", link: "/docs/course-modules/week-1/index" },
-  { week: 2, title: "ROS 2 Navigation & Perception", description: "SLAM, navigation stacks, and sensor integration.", icon: "FaEye", link: "/docs/course-modules/week-2/index" },
-  { week: 3, title: "Digital Twin with Gazebo", description: "Building robot models and simulating environments.", icon: "FaCubes", link: "/docs/course-modules/week-3/index" },
-  { week: 4, title: "Advanced Simulation in Unity", description: "High-fidelity physics and realistic rendering.", icon: "FaUnity", link: "/docs/course-modules/week-4/index" },
-  { week: 5, title: "NVIDIA Isaac Sim & ROS 2", description: "Integrating Isaac Sim with ROS 2 workflows.", icon: "FaMicrochip", link: "/docs/course-modules/week-5/index" },
-  { week: 6, title: "AI with NVIDIA Jetson", description: "Deploying AI models on edge devices.", icon: "FaBrain", link: "/docs/course-modules/week-6/index" },
-  { week: 7, title: "Robot Manipulation", description: "Inverse kinematics, motion planning, and grasping.", icon: "FaHandsHelping", link: "/docs/course-modules/week-7/index" },
-  { week: 8, title: "Reinforcement Learning for Robotics", description: "Training robots with RL in simulated environments.", icon: "FaFlask", link: "/docs/course-modules/week-8/index" },
-  { week: 9, title: "Vision-Language Models (VLMs)", description: "Understanding and generating human-like language for robots.", icon: "FaComments", link: "/docs/course-modules/week-9/index" },
-  { week: 10, title: "Visual-Language-Action (VLA) Models", description: "Bridging vision, language, and action for complex tasks.", icon: "FaBook", link: "/docs/course-modules/week-10/index" },
-  { week: 11, title: "Human-Robot Interaction", description: "Safe and intuitive collaboration with robots.", icon: "FaChalkboardTeacher", link: "/docs/course-modules/week-11/index" },
-  { week: 12, title: "Project Development & Deployment", description: "Bringing your robotic ideas to life.", icon: "FaCode", link: "/docs/course-modules/week-12/index" },
-  { week: 13, title: "Future of Physical AI", description: "Exploring advanced topics and emerging trends.", icon: "FaCogs", link: "/docs/course-modules/week-13/index" },
+  { week: 1, title: "Introduction to ROS 2", description: "Fundamentals of ROS 2, nodes, topics, and services.", icon: "FaRobot", link: "/docs/course-modules/week-1" },
+  { week: 2, title: "ROS 2 Navigation & Perception", description: "SLAM, navigation stacks, and sensor integration.", icon: "FaEye", link: "/docs/course-modules/week-2" },
+  { week: 3, title: "Digital Twin with Gazebo", description: "Building robot models and simulating environments.", icon: "FaCubes", link: "/docs/course-modules/week-3" },
+  { week: 4, title: "Advanced Simulation in Unity", description: "High-fidelity physics and realistic rendering.", icon: "FaUnity", link: "/docs/course-modules/week-4" },
+  { week: 5, title: "NVIDIA Isaac Sim & ROS 2", description: "Integrating Isaac Sim with ROS 2 workflows.", icon: "FaMicrochip", link: "/docs/course-modules/week-5" },
+  { week: 6, title: "AI with NVIDIA Jetson", description: "Deploying AI models on edge devices.", icon: "FaBrain", link: "/docs/course-modules/week-6" },
+  { week: 7, title: "Robot Manipulation", description: "Inverse kinematics, motion planning, and grasping.", icon: "FaHandsHelping", link: "/docs/course-modules/week-7" },
+  { week: 8, title: "Reinforcement Learning for Robotics", description: "Training robots with RL in simulated environments.", icon: "FaFlask", link: "/docs/course-modules/week-8" },
+  { week: 9, title: "Vision-Language Models (VLMs)", description: "Understanding and generating human-like language for robots.", icon: "FaComments", link: "/docs/course-modules/week-9" },
+  { week: 10, title: "Visual-Language-Action (VLA) Models", description: "Bridging vision, language, and action for complex tasks.", icon: "FaBook", link: "/docs/course-modules/week-10" },
+  { week: 11, title: "Human-Robot Interaction", description: "Safe and intuitive collaboration with robots.", icon: "FaChalkboardTeacher", link: "/docs/course-modules/week-11" },
+  { week: 12, title: "Project Development & Deployment", description: "Bringing your robotic ideas to life.", icon: "FaCode", link: "/docs/course-modules/week-12" },
+  { week: 13, title: "Future of Physical AI", description: "Exploring advanced topics and emerging trends.", icon: "FaCogs", link: "/docs/course-modules/week-13" },
 ];
+
 
 // ---------------- Content Cards ----------------
 const contentCardsData = [
@@ -91,19 +92,28 @@ export default function MainPageHero() {
       </div>
 
       {/* ----- Content Cards Section (Full-Width) ----- */}
-      <section className="content-cards-section">
-        <div className="content-cards-grid">
+      <section className="content-section">
+        <h2 className="content-heading">What You Will Learn</h2>
+
+        <div className="content-grid">
           {contentCardsData.map((card, index) => (
-            <div key={index} className="content-card">
-              <div className="content-card-icon">
+            <div key={index} className="content-item">
+              <div className="content-icon">
                 <NoSsr><IconLoader iconName={card.icon} /></NoSsr>
               </div>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
+
+              <div className="content-text">
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+              </div>
+
+              {/* neon divider */}
+              <div className="content-divider"></div>
             </div>
           ))}
         </div>
       </section>
+
     </>
   );
 }

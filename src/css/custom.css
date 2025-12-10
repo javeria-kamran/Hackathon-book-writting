@@ -201,6 +201,73 @@
   }
 }
 
+/* Section Wrapper */
+.content-section {
+  width: 100%;
+  padding: 40px 0;
+}
+
+/* Section Heading */
+.content-heading {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: left;
+}
+
+/* 2 Column Layout */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+/* Each Row Item */
+.content-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding-bottom: 25px;
+  position: relative;
+}
+
+/* Icon */
+.content-icon {
+  font-size: 40px;
+  min-width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Text */
+.content-text h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.content-text p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Neon Divider */
+.content-divider {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 255, 255, 0.7),
+    rgba(0, 120, 255, 0.7)
+  );
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 
 /* RESPONSIVE */
 @media (max-width: 1200px) {
